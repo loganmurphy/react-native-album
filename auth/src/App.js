@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import firebase from 'firebase';
+
 import { Header, Button, Spinner } from './components/common';
 import LoginForm from './components/loginForm';
+
 
 class App extends Component {
     state = { loggedIn: null };
@@ -26,6 +28,7 @@ class App extends Component {
             }
         });
     }
+
 
     renderContent() {
         switch (this.state.loggedIn) {
@@ -51,6 +54,9 @@ class App extends Component {
             <View>
                 <Header headerText='Authentication' />
                 {this.renderContent()}
+                <Button>
+                         Log In With Google
+                </Button>
             </View>
         );
     }
